@@ -15,6 +15,10 @@ public class Alunos {
 		formando = false;
 	}
 	
+	public Alunos () {
+		
+	}
+	
 	public void setNome(String nome) {
 		this.nome=nome;
 	}
@@ -54,4 +58,10 @@ public class Alunos {
 	public char getSexo() {
 		return sexo;
 	}
+
+	@Override
+	public String toString() {
+		return "Seu nome é " + nome + ", sua idade é " + idade + ", seu peso é " + peso;
+	}
+	
 }

@@ -41,7 +41,7 @@ public class Turma {
 		this.serie=serie;
 	}
 	
-	public int getserie() {
+	public int getSerie() {
 		return serie;
 	}
 }
