@@ -34,4 +34,9 @@ public class Produto {
 	public double getPreco() {
 		return preco;
 	}
+	
+	@Override
+	public String toString() {
+		return "O produto é " + nome + ", a quantidade é " + quantidade + " e o preco é " + preco;
+	}
 }

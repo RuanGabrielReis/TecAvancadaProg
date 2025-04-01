@@ -44,4 +44,10 @@ public class Disciplina {
 	public boolean getOfertada() {
 		return ofertada;
 	}
+	
+	@Override
+	public String toString() {
+		return "O nome da turma é " + nome + ", o professor é " + professor + " e esta no " + semestre + " semestre.";
+	}
+	
 }
