@@ -44,4 +44,9 @@ public class Turma {
 	public int getSerie() {
 		return serie;
 	}
+	
+	@Override
+	public String toString() {
+		return "A turma é " + nome + ", o curso é " + curso + ", a quantidade de alunos é " + qtdAlunos + "e a séria é " + serie;
+	}
 }
