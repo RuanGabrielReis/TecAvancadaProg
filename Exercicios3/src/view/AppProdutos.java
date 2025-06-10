@@ -41,7 +41,7 @@ public class AppProdutos {
                     String novoNome = JOptionPane.showInputDialog("Novo nome:");
                     preco = Double.parseDouble(JOptionPane.showInputDialog("Novo preço:"));
                     qtt = Integer.parseInt(JOptionPane.showInputDialog("Nova quantidade:"));
-                    if (produtos.alterarProduto(nome, novoNome, qtt, preco) {
+                    if (produtos.alterarProduto(nome, novoNome, qtt, preco) ){
                         JOptionPane.showMessageDialog(null, "Cliente alterado com sucesso.");
                     } else {
                         JOptionPane.showMessageDialog(null, "Cliente nao encontrado.");
@@ -49,24 +49,14 @@ public class AppProdutos {
                     break;
 
                 case 4:
-                    id = Integer.parseInt(JOptionPane.showInputDialog("ID cliente a listar:"));
-                    Cliente cliente = banco.buscarClientePorId(id);
-                    if (cliente != null) {
-                        JOptionPane.showMessageDialog(null, cliente.toString());
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Cliente nao encontrado.");
-                    }
-                    break;
-
-                case 5:
-                    StringBuilder lista = new StringBuilder("Clientes cadastrados:\n");
-                    for (Cliente c : banco.listarTodos()) {
-                        lista.append(c).append("\n");
+                    StringBuilder lista = new StringBuilder("Produtos cadastrados:\n");
+                    for (Produto produto : produtos.listarProdutos()) {
+                        lista.append(produto).append("\n");
                     }
                     JOptionPane.showMessageDialog(null, lista.toString());
                     break;
 
-                case 6:
+                case 5:
                     JOptionPane.showMessageDialog(null, "Encerrando o sistema");
                     break;
 
