@@ -22,7 +22,7 @@ public class AppProdutos {
                 case 1:
                     String nome = JOptionPane.showInputDialog("Nome do produto:");
                     double preco = Double.parseDouble(JOptionPane.showInputDialog("Preco do produto:"));
-                    int qtt = Integer.parseInt(JOptionPane.showInputDialog("Telefone do cliente:"));
+                    int qtt = Integer.parseInt(JOptionPane.showInputDialog("Quantidade de produtos:"));
                     Produto novoProduto = new Produto(nome, preco, qtt);
                     produtos.inserirProduto(novoProduto);
                     break;
@@ -32,7 +32,7 @@ public class AppProdutos {
                     if (produtos.removerProduto(nome)) {
                         JOptionPane.showMessageDialog(null, "Produto removido com sucesso.");
                     } else {
-                        JOptionPane.showMessageDialog(null, "Cliente nao encontrado.");
+                        JOptionPane.showMessageDialog(null, "Produto nao encontrado.");
                     }
                     break;
 
@@ -42,16 +42,18 @@ public class AppProdutos {
                     preco = Double.parseDouble(JOptionPane.showInputDialog("Novo preço:"));
                     qtt = Integer.parseInt(JOptionPane.showInputDialog("Nova quantidade:"));
                     if (produtos.alterarProduto(nome, novoNome, qtt, preco) ){
-                        JOptionPane.showMessageDialog(null, "Cliente alterado com sucesso.");
+                        JOptionPane.showMessageDialog(null, "Produto alterado com sucesso.");
                     } else {
-                        JOptionPane.showMessageDialog(null, "Cliente nao encontrado.");
+                        JOptionPane.showMessageDialog(null, "Produto nao encontrado.");
                     }
                     break;
 
                 case 4:
-                    StringBuilder lista = new StringBuilder("Produtos cadastrados:\n");
+                    //StringBuilder lista = new StringBuilder("Produtos cadastrados:\n");
+                	String lista = "";
                     for (Produto produto : produtos.listarProdutos()) {
-                        lista.append(produto).append("\n");
+                        //lista.append(produto).append("\n");
+                    	lista = lista + produto.getNome() + ", R$" + produto.getPreco() + ", " + produto.getQtt() + "unidades \n";
                     }
                     JOptionPane.showMessageDialog(null, lista.toString());
                     break;

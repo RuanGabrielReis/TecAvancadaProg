@@ -31,7 +31,7 @@ public class ListaProdutos {
     public int buscarProduto(String nome) {
     	int i = 0;
     	for (Produto produto : produtos) {
-    		if (produto.getNome() == nome) {
+    		if (produto.getNome().equals(nome)) {
     			return i;
     		}
     		i++;
