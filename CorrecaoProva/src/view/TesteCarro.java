@@ -26,6 +26,17 @@ public class TesteCarro {
 				Carro novoCarro = new Carro(modelo, marca, ano, preco);
 				Lcarros.inserirCarro(novoCarro);
 				break;
+				
+			case 4:
+				StringBuilder sb = new StringBuilder("Lista de carros\n\n");
+				
+				for (Carro c: Lcarros.listar()) {
+					sb.append(c).append("\n");
+				}
+				
+				JOptionPane.showMessageDialog(null, "<html><pre>" + sb +"</pre></html>");
+				//JOptionPane.showMessageDialog(null, sb.length() >0 ? sb.toString() : "Nenhum carro cadastrado");
+				break;
 			}
 		} while (opcao != 5);
 	}
