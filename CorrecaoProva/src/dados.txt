@@ -1,0 +1,4 @@
+captiva chevrolet 500000 2018
+corsa chevrolet 150000 2006
+fusca chevrolet 100000 1998
+ford-ka ford 5000 2002
