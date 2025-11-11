@@ -45,6 +45,10 @@ public class Carro {
 		return new Carro(modelo, marca, ano, preco);
 	}
 	
+	public String toCSV() {
+		return modelo + ";" + marca + ";" + ano + ";" + preco; 
+	}
+	
 	@Override
 	public String toString() {
 		return String.format("%10s %10s %10d %10.2f", modelo, marca, ano, preco);
