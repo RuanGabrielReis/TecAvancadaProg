@@ -30,12 +30,14 @@ public class ControllerCarro {
 		if (i >= 0) {
 			Lcarros.remove(i);
 		}
+		salvarArquivo();
 	}
 	public void alterarCarro(String modelo, Carro carro) {
 		int i = Buscar(modelo);
 		if (i >= 0) {
 			Lcarros.set(i, carro);
 		}
+		salvarArquivo();
 	}
 	public int Buscar(String modelo) {
 		int i = 0;

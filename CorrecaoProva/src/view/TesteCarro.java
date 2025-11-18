@@ -27,6 +27,11 @@ public class TesteCarro {
 				Lcarros.inserirCarro(novoCarro);
 				break;
 				
+			case 2: 
+				String modeloRemover = JOptionPane.showInputDialog("Modelo para remover:");
+				Lcarros.removerCarro(modeloRemover);
+				
+				break;
 			case 4:
 				StringBuilder sb = new StringBuilder("Lista de carros\n\n");
 				
