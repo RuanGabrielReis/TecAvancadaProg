@@ -53,12 +53,9 @@ public class ControllerCarro {
 		
 		if(!arquivo.exists()) return;	
 		
-		BufferedReader br;
-		
 		String linha;
-		try {
-			br = new BufferedReader(new FileReader(ARQUIVO));
-			
+		
+		try (BufferedReader br = new BufferedReader(new FileReader(ARQUIVO))){
 			while( (linha = br.readLine()) != null) {
 				Lcarros.add(Carro.fromCSV(linha));
 			}
@@ -68,8 +65,7 @@ public class ControllerCarro {
 	}
 	
 	private void salvarArquivo() {
-		try {
-			BufferedWriter bw = new BufferedWriter(new FileWriter(ARQUIVO));
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(ARQUIVO))){
 			for (Carro c : Lcarros) {
 				bw.write(c.toCSV());
 				bw.newLine();
